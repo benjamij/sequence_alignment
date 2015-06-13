@@ -3,6 +3,17 @@ __author__ = 'benjaminjakobus'
 import copy
 
 def sequence_alignment(m, n, x, y, d, a):
+    """ Determines optimal sequence alignment for two strings (x and y) in linear time.
+
+            Args:
+                m   - Number of characters in x
+                n   - Number of characters in y
+                x   - First string
+                y   - Second string
+                d
+                a
+
+    """
     CURRENT = []
     LAST = []
     for i in range(0, m):
