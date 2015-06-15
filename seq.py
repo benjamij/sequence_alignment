@@ -28,3 +28,18 @@ def sequence_alignment(m, n, x, y, d, a):
 
     return CURRENT[m]
 
+
+def find_sequence(i, j, x, y, d, a, M):
+    s = [[], []]
+    if i == 0 or j == 0:
+        return
+    _a = 0 if (x[i] == x[j]) else a
+    if M[i][j] == _a * M[i - 1][j - 1]:
+        s[0] = x[i]
+        s[1] = y[j]
+        return s + find_sequence(i - 1, j - 1, x, y, d, a, M)
+    elif M[i][j] == d + M[i - 1][j]:
+        return find_sequence(i - 1, j, x, y, d, a, M)
+    else:
+        return find_sequence(i, j - 1, x, y, d, a, M)
+
